@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skycripto</title>
+    <link rel="stylesheet" href="Css/start.css">
+</head>
+<body>
+    <header>
+        <span>Skycripto</span>
+    </header>
+
+    <div class="container">
+        <div class="main-column">
+            <textarea id="input" placeholder="Entre com seu texto para encriptar"></textarea>
+            <div class="button-group">
+                <button id="encript">Encriptar</button>
+                <button id="descrip">Descriptar</button>
+            </div>
+            <!-- render da saida encriptada -->
+            <div id="render" class="render"></div>
+            <div class="opts">
+                <button id="copy" class="opButtons">copiar</button>
+                <button id="delet" class="opButtons">limpar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- renderizador de estrelas -->
+    <div id="sky" class="sky"></div>
+
+    <script src="Js/stars.js"></script>
+    <script src="Js/encript.js"></script>
+</body>
+</html>

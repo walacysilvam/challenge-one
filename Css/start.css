@@ -1,0 +1,225 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family:monospace;
+    background-color: #f4f4f4;
+}
+
+header {
+    height: 50px;
+    font-weight: 600;
+    background-color: #566475;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 4;
+    border-bottom: 2px solid #334456;
+    box-shadow: 0px 4px 8px #334456;
+}
+
+header span {
+    font-size: 1.8rem;
+    line-height: auto;
+   
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+/* estrelas caindo aqui */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.shooting-star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transform: rotate(-45deg); /* Rotaciona inicialmente para a direção da animação */
+    animation: shooting 2s ease-in-out infinite;
+}
+
+@keyframes shooting {
+    0% {
+        opacity: 1;
+        transform: translateX(0) translateY(0) rotate(45deg);
+    }
+    30% {
+        opacity: 1; /* Estrela visível até 70% da animação */
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-200px) translateY(200px) rotate(45deg);
+    }
+}
+/* fim das estrelas */
+
+textarea {
+    width: 100%;
+    min-height: 30vh;
+    height: auto;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #a0c1ca;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    color: #fff;
+    background-color: #525d77;
+
+    box-shadow: 3px 3px 10px #334456;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #566475;
+    color: white;
+    transition: background-color 0.3s ease;
+
+    box-shadow: 3px 3px 10px #334456;
+}
+
+button:hover {
+    background-color: #334456;
+}
+
+.container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 50px);
+    margin: 0;
+    background-image: url("/Img/mont-2.jpeg");
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-column {
+    display: flex;
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 3;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-group {
+    width: 100%;
+    text-align: center;
+}
+
+.render {
+    width: 100%;
+    min-height: 60px;
+    height: auto;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #a0c1ca;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    color: #fff;
+    background-color: #7784a1;
+
+    box-shadow: 3px 3px 10px #334456;
+    display: none;
+}
+.opts {
+    display: flex;
+    width: 100%;
+    flex-direction: inline;
+    justify-content: left;
+}
+.opButtons {
+    width: 65px;
+    height: 65px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+/* MEDIA QUERYS */
+
+@media (max-width: 768px) {
+    header span {
+        font-size: 1.5rem;
+    }
+
+    .main-column {
+        width: 100%;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header span {
+        font-size: 1.2rem;
+    }
+
+    .main-column {
+        padding: 10px;
+    }
+
+    textarea {
+        height: 80px;
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
